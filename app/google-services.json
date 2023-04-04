@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218000292617",
+    "project_id": "pharma-friend-app",
+    "storage_bucket": "pharma-friend-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218000292617:android:5534b717dacad4aa0b31d8",
+        "android_client_info": {
+          "package_name": "com.georgia.gk.pharmafriendapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218000292617-ligrdjldr870892qqibj6oppo48nh87p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkfa6RSuMEX7IURetskQZRJRvtfWTGaTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218000292617-ligrdjldr870892qqibj6oppo48nh87p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
