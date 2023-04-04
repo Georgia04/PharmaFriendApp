@@ -25,7 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private ConstraintLayout loginButton;
     EditText edLoginEmailAddress, edPassword;
     TextView textLink, forgotPasswordLink;
@@ -104,10 +104,10 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Login.this, "You have successfully logged in to your account!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "You have successfully logged in to your account!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         }else{
-                            Toast.makeText(Login.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar2.setVisibility(View.GONE);
 
                         }
@@ -120,7 +120,7 @@ public class Login extends AppCompatActivity {
         textLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, Register.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
@@ -141,12 +141,12 @@ public class Login extends AppCompatActivity {
                            firebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                                @Override
                                public void onSuccess(Void aVoid) {
-                                   Toast.makeText(Login.this, "Please check your email for the link", Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(LoginActivity.this, "Please check your email for the link", Toast.LENGTH_SHORT).show();
                                }
                            }).addOnFailureListener(new OnFailureListener() {
                                @Override
                                public void onFailure(@NonNull Exception e) {
-                                   Toast.makeText(Login.this, "Something went wrong! Reset link is NOT sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(LoginActivity.this, "Something went wrong! Reset link is NOT sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
                                }
                            });
                     }

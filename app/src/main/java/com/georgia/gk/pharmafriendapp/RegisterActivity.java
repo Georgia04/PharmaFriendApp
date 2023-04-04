@@ -27,9 +27,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.gson.internal.NonNullElementWrapperList;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private ConstraintLayout registerButton;
     EditText edPersonName, edEmailAddress, edLoginPassword, edLoginConfirmPassword, edPhone, edSecureCode;
@@ -135,7 +134,7 @@ public class Register extends AppCompatActivity {
                        if (isValid(loginPassword)) {
 
                            Toast.makeText(getApplicationContext(), "Input has been accepted", Toast.LENGTH_SHORT).show();
-                           startActivity(new Intent(Register.this,LogOut.class));
+                           startActivity(new Intent(RegisterActivity.this,LogOut.class));
                        }
                        /*else{
                            Toast.makeText(getApplicationContext(), "Password must contain more than 8 characters!", Toast.LENGTH_SHORT).show();
@@ -186,7 +185,7 @@ public class Register extends AppCompatActivity {
                             user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(Register.this, "Verification emails has been sent. Please check your email", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "Verification emails has been sent. Please check your email", Toast.LENGTH_SHORT).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -195,10 +194,10 @@ public class Register extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(Register.this, "You have successfully registered!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "You have successfully registered!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), LocationActivity.class));
                         }else{
-                            Toast.makeText(Register.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
@@ -210,7 +209,7 @@ public class Register extends AppCompatActivity {
         textViewLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Register.this, Login.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
         });
     }

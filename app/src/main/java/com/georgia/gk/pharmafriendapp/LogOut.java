@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -20,6 +18,6 @@ public class LogOut extends AppCompatActivity {
 
     public void logout(View view){
         FirebaseAuth.getInstance().signOut(); //User signs out from the account
-        startActivity(new Intent(getApplicationContext(), Login.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 }

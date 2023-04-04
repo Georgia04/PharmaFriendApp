@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class VerificationEmailMessage extends AppCompatActivity {
+public class VerificationEmailMessageActivity extends AppCompatActivity {
 
     TextView verifyEmail;
     Button resendCode;
@@ -45,7 +45,7 @@ public class VerificationEmailMessage extends AppCompatActivity {
                     user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(VerificationEmailMessage.this, "Verification emails has been sent. Please check your email", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(VerificationEmailMessageActivity.this, "Verification emails has been sent. Please check your email", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

@@ -3,6 +3,7 @@ package com.georgia.gk.pharmafriendapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,6 +35,9 @@ public class LocationActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(postcodeAddress)) {
                     edTextPostalAddress.setError("Please enter your valid postcode address!");
                     return;
+                }else{
+                    Intent intent = new Intent(LocationActivity.this, ConfirmLocationActivity.class);
+                    startActivity(intent);
                 }
 
 
