@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -27,6 +28,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -36,6 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
     boolean loginPasswordVisible;
+    FirebaseFirestore firestore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
+        firestore = FirebaseFirestore.getInstance();
 
         if (firebaseAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), LogOut.class));
@@ -120,11 +129,12 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String personName = edPersonName.getText().toString().trim();
+                String personName = edPersonName.getText().toString();
                 String emailAddress = edEmailAddress.getText().toString().trim();
                 String loginPassword = edLoginPassword.getText().toString().trim();
                 String loginConfirmPassword = edLoginConfirmPassword.getText().toString().trim();
-                String secureCode = edSecureCode.getText().toString().trim();
+                String secureCode = edSecureCode.getText().toString();
+                String phone = edPhone.getText().toString();
 
                 if (personName.length()==0 || emailAddress.length()==0 || loginPassword.length()==0 || loginConfirmPassword.length()==0) {
                     Toast.makeText(getApplicationContext(), "Please fill all the details!", Toast.LENGTH_SHORT).show();
@@ -181,8 +191,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                             //email verification
 
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            FirebaseUser users = firebaseAuth.getCurrentUser();
+                            users.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(RegisterActivity.this, "Verification emails has been sent. Please check your email", Toast.LENGTH_SHORT).show();
@@ -195,6 +205,24 @@ public class RegisterActivity extends AppCompatActivity {
                             });
 
                             Toast.makeText(RegisterActivity.this, "You have successfully registered!", Toast.LENGTH_SHORT).show();
+                            userID = firebaseAuth.getCurrentUser().getUid();
+                            DocumentReference docReference  = firestore.collection("users").document(userID);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("pName",personName);
+                            user.put("email", emailAddress);
+                            user.put("phoneNumber", phone);
+                            user.put("sCode", secureCode);
+                            docReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Log.d(TAG, "onSuccess: A new profile is created for this user ID" + userID );
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "onFailure: " + e.toString());
+                                }
+                            });
                             startActivity(new Intent(getApplicationContext(), LocationActivity.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
