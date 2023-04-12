@@ -3,14 +3,14 @@
 
     <item android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="home"/>
+        android:id="@+id/home"/>
     <item android:title="Categories"
         android:icon="@drawable/ic_baseline_category_24"
-        android:id="productCategories"/>
+        android:id="@+id/productCategories"/>
     <item android:title="Favourite"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:id="favourite"/>
+        android:id="@+id/favourite" />
     <item android:title="Profile"
         android:icon="@drawable/ic_baseline_person_24"
-        android:id="profile"/>
+        android:id="@+id/profile"/>
 </menu>

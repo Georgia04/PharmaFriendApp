@@ -30,6 +30,8 @@ public class LocationActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,7 @@ public class LocationActivity extends AppCompatActivity {
         progressBar3 = findViewById(R.id.progressBar3);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
 
 
 
@@ -55,7 +58,6 @@ public class LocationActivity extends AppCompatActivity {
                     Intent intent = new Intent(LocationActivity.this, ConfirmLocationActivity.class);
                     startActivity(intent);
                 }
-
 
                 progressBar3.setVisibility(View.VISIBLE);
             }

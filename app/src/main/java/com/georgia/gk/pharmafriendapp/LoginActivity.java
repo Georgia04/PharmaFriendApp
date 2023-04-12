@@ -105,10 +105,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "You have successfully logged in to your account!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            startActivity(new Intent(LoginActivity.this, OTPVerificationCode.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
                             progressBar2.setVisibility(View.GONE);
+                            return;
 
                         }
                     }

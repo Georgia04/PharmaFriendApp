@@ -37,7 +37,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private ConstraintLayout registerButton;
-    EditText edPersonName, edEmailAddress, edLoginPassword, edLoginConfirmPassword, edPhone, edSecureCode;
+    EditText edPersonName, edEmailAddress, edLoginPassword, edLoginConfirmPassword, edPhoneNumber, edSecureCode;
     TextView textViewLink;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         edEmailAddress = findViewById(R.id.editTextEmailAddress);
         edLoginPassword = findViewById(R.id.editTextLoginPassword);
         edLoginConfirmPassword = findViewById(R.id.editTextLoginConfirmPassword);
-        edPhone = findViewById(R.id.editTextPhone);
+        edPhoneNumber = findViewById(R.id.editPhoneNumber);
         edSecureCode = findViewById(R.id.editTextSecureCode);
         textViewLink = findViewById(R.id.textViewUser);
         registerButton = findViewById(R.id.registerButton);
@@ -134,13 +134,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String loginPassword = edLoginPassword.getText().toString().trim();
                 String loginConfirmPassword = edLoginConfirmPassword.getText().toString().trim();
                 String secureCode = edSecureCode.getText().toString();
-                String phone = edPhone.getText().toString();
+                String phoneNumber = edPhoneNumber.getText().toString();
+
 
                 if (personName.length()==0 || emailAddress.length()==0 || loginPassword.length()==0 || loginConfirmPassword.length()==0) {
                     Toast.makeText(getApplicationContext(), "Please fill all the details!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if (loginPassword.compareTo(loginConfirmPassword)==0){
+                    if (loginConfirmPassword.compareTo(loginPassword)==0){
                        if (isValid(loginPassword)) {
 
                            Toast.makeText(getApplicationContext(), "Input has been accepted", Toast.LENGTH_SHORT).show();
@@ -165,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(loginPassword)) {
+                if (TextUtils.isEmpty(personName)) {
                     edPersonName.setError("Please enter your full name!");
                     return;
                 }
@@ -176,8 +177,14 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (phoneNumber.length() < 11) {
+                    edPhoneNumber.setError("The Phone Number has to be of 11 characters");
+                    return;
+                }
+
                 if (secureCode.length()< 8) {
-                    edSecureCode.setError("Secure Code must contain character numbers > = 8 ");
+                    edSecureCode.setError("Secure Code must contain a min of 8 characters! ");
+                    return;
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -206,12 +213,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                             Toast.makeText(RegisterActivity.this, "You have successfully registered!", Toast.LENGTH_SHORT).show();
                             userID = firebaseAuth.getCurrentUser().getUid();
-                            DocumentReference docReference  = firestore.collection("users").document(userID);
+                            DocumentReference docReference  = firestore.collection("Users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("pName",personName);
-                            user.put("email", emailAddress);
-                            user.put("phoneNumber", phone);
-                            user.put("sCode", secureCode);
+                            user.put("Full Name",personName);
+                            user.put("Email Address", emailAddress);
+                            user.put("Phone Number", phoneNumber);
+                            user.put("Security Code", secureCode);
+
                             docReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {

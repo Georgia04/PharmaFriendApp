@@ -156,7 +156,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/editPhoneNumber"
             android:layout_width="345dp"
             android:layout_height="46dp"
             android:layout_marginTop="20dp"
@@ -196,7 +196,7 @@
             android:textColorHint="#ffffff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/editPhoneNumber" />
 
         <TextView
             android:id="@+id/textViewUser"
