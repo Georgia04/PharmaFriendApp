@@ -72,7 +72,10 @@ public class OTPVerificationCode extends AppCompatActivity {
                     Toast.makeText(OTPVerificationCode.this, "OTP Code is wrong!", Toast.LENGTH_SHORT).show();
                 }
                 else
-                verifyotpcode(otpCode.getText().toString());
+                {
+                    verifyotpcode(otpCode.getText().toString());
+                }
+
             }
         });
     }
