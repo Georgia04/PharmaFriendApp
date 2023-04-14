@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class LoginActivity extends AppCompatActivity {
     private ConstraintLayout loginButton;
@@ -102,20 +103,22 @@ public class LoginActivity extends AppCompatActivity {
 
                 firebaseAuth.signInWithEmailAndPassword(loginEmailAddress, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<AuthResult> task)
+
+                    {
                         if (task.isSuccessful()) {
+
                             Toast.makeText(LoginActivity.this, "You have successfully logged in to your account!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, OTPVerificationCode.class));
+                            startActivity(new Intent(LoginActivity.this, VerificationCodeActivity.class));
+
                         }else{
                             Toast.makeText(LoginActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                             progressBar2.setVisibility(View.GONE);
                             return;
-
                         }
                     }
                 });
-
             }
         });
 

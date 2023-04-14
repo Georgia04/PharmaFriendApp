@@ -1,13 +1,11 @@
 package com.georgia.gk.pharmafriendapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,11 +13,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthMissingActivityForRecaptchaException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
@@ -27,10 +22,10 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class OTPVerificationCode extends AppCompatActivity {
+public class VerificationCodeActivity extends AppCompatActivity {
 
-    private ConstraintLayout otpCodeButton;
-    private ConstraintLayout otpVerificationButton;
+    private ConstraintLayout getOTPCodeButton;
+    private ConstraintLayout verifyOTPCodeButton;
     EditText phoneNumber, otpCode;
 
     FirebaseAuth firebaseAuth;
@@ -39,21 +34,21 @@ public class OTPVerificationCode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otpverification_code);
+        setContentView(R.layout.activity_verification_code);
 
         phoneNumber = findViewById(R.id.phoneNumber);
         otpCode = findViewById(R.id.otpCode);
-        otpCodeButton = findViewById(R.id.otpCodeButton);
-        otpVerificationButton = findViewById(R.id.otpVerificationButton);
+        getOTPCodeButton = findViewById(R.id.getOTPCodeButton);
+        verifyOTPCodeButton = findViewById(R.id.verifyOTPCodeButton);
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-        otpCodeButton.setOnClickListener(new View.OnClickListener() {
+        getOTPCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(phoneNumber.getText().toString()))
                 {
-                    Toast.makeText(OTPVerificationCode.this, "Please Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(VerificationCodeActivity.this, "Please Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -63,13 +58,13 @@ public class OTPVerificationCode extends AppCompatActivity {
             }
         });
 
-        otpVerificationButton.setOnClickListener(new View.OnClickListener() {
+        verifyOTPCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 if (TextUtils.isEmpty(otpCode.getText().toString()))
                 {
-                    Toast.makeText(OTPVerificationCode.this, "OTP Code is wrong!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(VerificationCodeActivity.this, "OTP Code is wrong!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -94,27 +89,27 @@ public class OTPVerificationCode extends AppCompatActivity {
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
-    mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential credential)
+        public void onVerificationCompleted(PhoneAuthCredential credential)
         {
-           final String code = credential.getSmsCode();
-           if (code !=null)
-           {
-             verifyotpcode(code);
-           }
+            final String code = credential.getSmsCode();
+            if (code !=null)
+            {
+                verifyotpcode(code);
+            }
         }
 
         @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
+        public void onVerificationFailed( FirebaseException e) {
 
-            Toast.makeText(OTPVerificationCode.this, "Verification Failed!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(VerificationCodeActivity.this, "Verification Failed!", Toast.LENGTH_SHORT).show();
         }
 
         @Override
-        public void onCodeSent(@NonNull String s,
-                @NonNull PhoneAuthProvider.ForceResendingToken token)
+        public void onCodeSent( String s,
+                                PhoneAuthProvider.ForceResendingToken token)
         {
             super.onCodeSent(s,token);
             verificationID = s;
@@ -123,8 +118,8 @@ public class OTPVerificationCode extends AppCompatActivity {
 
     private void verifyotpcode(String Code)
     {
-     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationID, Code);
-     signinbyCredentials(credential);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationID, Code);
+        signinbyCredentials(credential);
     }
 
     private void signinbyCredentials(PhoneAuthCredential credential)
@@ -133,12 +128,12 @@ public class OTPVerificationCode extends AppCompatActivity {
         firebaseAuth1.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
+                    public void onComplete(Task<AuthResult> task)
                     {
                         if (task.isSuccessful())
                         {
-                            Toast.makeText(OTPVerificationCode.this, "You have logged in successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(OTPVerificationCode.this, HomeActivity.class));
+                            Toast.makeText(VerificationCodeActivity.this, "You have logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(VerificationCodeActivity.this, HomeActivity.class));
                         }
                     }
                 });
@@ -150,7 +145,7 @@ public class OTPVerificationCode extends AppCompatActivity {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser !=null)
         {
-            startActivity(new Intent(OTPVerificationCode.this, HomeActivity.class));
+            startActivity(new Intent(VerificationCodeActivity.this, HomeActivity.class));
             finish();
         }
     }
