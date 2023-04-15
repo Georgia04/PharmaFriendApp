@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(LoginActivity.this, "You have successfully logged in to your account!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, VerificationCodeActivity.class));
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
                         }else{
                             Toast.makeText(LoginActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
