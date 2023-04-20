@@ -156,7 +156,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <FrameLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/category1_frame"
             android:layout_width="68dp"
             android:layout_height="73dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -167,7 +167,7 @@
             app:layout_constraintVertical_bias="0.055">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/category1_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/cold_and_flu" />
@@ -177,14 +177,15 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="Cold and Flu"
             android:textColor="#000000"
             android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintHorizontal_bias="0.026"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/category1_frame" />
 
         <FrameLayout
             android:id="@+id/frameLayout2"
@@ -192,13 +193,13 @@
             android:layout_height="73dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintStart_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toEndOf="@+id/category1_frame"
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
                 app:srcCompat="@drawable/eye_care" />
         </FrameLayout>
 
@@ -227,8 +228,8 @@
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
                 app:srcCompat="@drawable/ear_care" />
         </FrameLayout>
 
@@ -236,7 +237,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="Ear Care"
             android:textColor="#000000"
             android:textSize="13sp"
@@ -257,8 +258,8 @@
 
             <ImageView
                 android:id="@+id/imageView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
                 app:srcCompat="@drawable/mouth_ulcers" />
         </FrameLayout>
 
@@ -266,7 +267,7 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="Mouth Ulcers"
             android:textColor="#000000"
             android:textSize="13sp"
@@ -286,8 +287,8 @@
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
                 app:srcCompat="@drawable/heartburn" />
         </FrameLayout>
 
@@ -295,7 +296,7 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="Hearburn"
             android:textColor="#000000"
             android:textSize="13sp"

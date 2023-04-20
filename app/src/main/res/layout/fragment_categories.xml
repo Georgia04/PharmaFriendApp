@@ -39,13 +39,12 @@
             android:id="@+id/coldAndFluButton"
             android:layout_width="331dp"
             android:layout_height="48dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.433"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20"
-            app:layout_constraintVertical_bias="0.12">
+            app:layout_constraintTop_toBottomOf="@+id/textView20">
 
             <TextView
                 android:id="@+id/textView21"
@@ -65,13 +64,12 @@
             android:id="@+id/eyeCareButton"
             android:layout_width="338dp"
             android:layout_height="47dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.468"
+            app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coldAndFluButton"
-            app:layout_constraintVertical_bias="0.086">
+            app:layout_constraintTop_toBottomOf="@+id/coldAndFluButton">
 
             <TextView
                 android:id="@+id/textView22"
@@ -91,9 +89,10 @@
             android:id="@+id/earCareButton"
             android:layout_width="338dp"
             android:layout_height="47dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toTopOf="@+id/mouthUlcersButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eyeCareButton">
 
@@ -115,13 +114,12 @@
             android:id="@+id/mouthUlcersButton"
             android:layout_width="338dp"
             android:layout_height="47dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coldAndFluButton"
-            app:layout_constraintVertical_bias="0.433">
+            app:layout_constraintTop_toBottomOf="@+id/earCareButton">
 
             <TextView
                 android:id="@+id/textView24"
@@ -141,13 +139,12 @@
             android:id="@+id/indigestionAndHeartburnButton"
             android:layout_width="338dp"
             android:layout_height="47dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coldAndFluButton"
-            app:layout_constraintVertical_bias="0.6">
+            app:layout_constraintTop_toBottomOf="@+id/mouthUlcersButton">
 
             <TextView
                 android:id="@+id/textView25"
