@@ -19,6 +19,13 @@
         android:theme="@style/Theme.PharmaFriendApp"
         tools:targetApi="31">
         <activity
+            android:name=".ColdAndFluFragment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".VerificationCodeActivity"
             android:exported="false">
             <meta-data
