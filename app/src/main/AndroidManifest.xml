@@ -19,6 +19,18 @@
         android:theme="@style/Theme.PharmaFriendApp"
         tools:targetApi="31">
         <activity
+            android:name=".GPSLocationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBIyEQWynYX1f9n87FywaT2eI-muQcIRXU" />
+
+        <activity
             android:name=".ColdAndFluCategoryActivity"
             android:exported="false">
             <meta-data
@@ -40,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LocationActivity"
+            android:name=".EnterLocationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

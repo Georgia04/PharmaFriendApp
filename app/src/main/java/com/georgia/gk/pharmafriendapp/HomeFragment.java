@@ -27,7 +27,7 @@ private ImageView category1Image;
         category1Image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),ColdAndFluCategoryActivity);
+                Intent intent = new Intent(getActivity(),ColdAndFluCategoryActivity.class);
                 startActivity(intent);
             }
         });

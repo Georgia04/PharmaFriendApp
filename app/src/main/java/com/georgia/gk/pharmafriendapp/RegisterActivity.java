@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -145,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
                        if (isValid(loginPassword)) {
 
                            Toast.makeText(getApplicationContext(), "Input has been accepted", Toast.LENGTH_SHORT).show();
-                           startActivity(new Intent(RegisterActivity.this,LogOut.class));
+                           startActivity(new Intent(RegisterActivity.this, EnterLocationActivity.class));
                        }
                        /*else{
                            Toast.makeText(getApplicationContext(), "Password must contain more than 8 characters!", Toast.LENGTH_SHORT).show();
@@ -156,6 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                     }
                 }
+
 
                 if (TextUtils.isEmpty(emailAddress)) {
                 edEmailAddress.setError("Please enter your valid email address!");
@@ -231,7 +231,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Log.d(TAG, "onFailure: " + e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(), LocationActivity.class));
+                            startActivity(new Intent(RegisterActivity.this, EnterLocationActivity.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error, please try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);

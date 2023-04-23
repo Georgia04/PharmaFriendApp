@@ -11,7 +11,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,18 +31,17 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class ConfirmLocationActivity extends AppCompatActivity {
+public class GPSLocationActivity extends AppCompatActivity {
 
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient fusedLocationProviderClient;
 
     TextView positiveTextLinkMessage, negativeTextLinkMessage;
-    ProgressBar progressBar4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm_location);
+        setContentView(R.layout.activity_gpslocation);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -69,32 +67,26 @@ public class ConfirmLocationActivity extends AppCompatActivity {
                     }
                 }).check();
 
+        positiveTextLinkMessage = findViewById(R.id.textViewPositive);
+        negativeTextLinkMessage = findViewById(R.id.textViewNegative);
 
-        positiveTextLinkMessage = findViewById(R.id.textViewYes);
-        negativeTextLinkMessage = findViewById(R.id.textViewNo);
-        progressBar4 = findViewById(R.id.progressBar4);
 
 
         positiveTextLinkMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConfirmLocationActivity.this, HomeActivity.class));
+                startActivity(new Intent(GPSLocationActivity.this, HomeActivity.class));
             }
 
 
         });
-
-        progressBar4.setVisibility(View.GONE);
-
 
         negativeTextLinkMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConfirmLocationActivity.this, EnterLocationActivity.class));
+                startActivity(new Intent(GPSLocationActivity.this, EnterLocationActivity.class));
             }
         });
-
-
     }
 
     public void getCurrentLocation() {
@@ -118,18 +110,16 @@ public class ConfirmLocationActivity extends AppCompatActivity {
                     public void onMapReady(@NonNull GoogleMap googleMap) {
                         if(location != null){
                             LatLng latLng = new LatLng(location.getLatitude(), location.getLatitude());
-                            MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Your current location");
+                            MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("This is your current location");
                             googleMap.addMarker(markerOptions);
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15 ));
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                         }
                         else{
-                            Toast.makeText(ConfirmLocationActivity.this, "Please allow your permission app location", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GPSLocationActivity.this, "Please allow your permission app location", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
         });
     }
-
-
 }
