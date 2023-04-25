@@ -167,7 +167,7 @@
             app:layout_constraintVertical_bias="0.055">
 
             <ImageView
-                android:id="@+id/category1_image"
+                android:id="@+id/category_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/cold_and_flu" />
@@ -197,7 +197,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/category_03"
                 android:layout_width="match_parent"
                 android:layout_height="92dp"
                 app:srcCompat="@drawable/eye_care" />
@@ -208,7 +208,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Ear Care"
+            android:text="Eye Care"
             android:textColor="#000000"
             android:textSize="13sp"
             android:textStyle="bold"
@@ -227,7 +227,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/category_02"
                 android:layout_width="match_parent"
                 android:layout_height="86dp"
                 app:srcCompat="@drawable/ear_care" />
@@ -257,7 +257,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/category_05"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 app:srcCompat="@drawable/mouth_ulcers" />
@@ -286,7 +286,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/category_04"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 app:srcCompat="@drawable/heartburn" />

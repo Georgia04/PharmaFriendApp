@@ -10,31 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/signOutButton"
-            android:layout_width="213dp"
-            android:layout_height="42dp"
-            android:background="@drawable/blue_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
-            app:layout_constraintVertical_bias="0.69">
-
-            <TextView
-                android:id="@+id/textViewSignOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign Out"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="135dp"
@@ -56,7 +31,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.218"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,13 +47,13 @@
             android:id="@+id/fullNameTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="48dp"
             android:text="Full Name:"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.191"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
 
@@ -94,13 +69,13 @@
             android:id="@+id/phoneNumberTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="48dp"
             android:text="Phone Number: "
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.227"
+            app:layout_constraintHorizontal_bias="0.06"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
@@ -112,41 +87,7 @@
             app:layout_constraintTop_toBottomOf= "@+id/phoneNumberTitle"
             app:layout_constraintLeft_toLeftOf = "@+id/phoneNumberTitle"/>
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="48dp"
-            android:layout_height="52dp"
-            android:src="@drawable/profile_email_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/emailAddressName"
-            app:layout_constraintHorizontal_bias="0.083"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26" />
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="44dp"
-            android:layout_height="41dp"
-            android:src="@drawable/ic_baseline_person_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fullNameTitle"
-            app:layout_constraintHorizontal_bias="0.062"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:layout_constraintVertical_bias="0.14" />
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="63dp"
-            android:layout_height="60dp"
-            android:src="@drawable/profile_phone_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/phoneNumberTitle"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView12"
-            app:layout_constraintVertical_bias="0.151" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

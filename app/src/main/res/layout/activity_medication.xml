@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/medication_Image_opened"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="180px"
+                android:maxHeight="250px"
+                android:minWidth="180px"
+                android:minHeight="250px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/arial"
+                android:text="Price:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintTop_toBottomOf="@+id/Dosage" />
+
+            <TextView
+                android:id="@+id/Dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="117dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/arial"
+                android:text="Dosage:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Price_opened"
+                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/medication_Name_opened"
+                android:layout_width="135dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="251dp"
+                android:layout_marginBottom="53dp"
+                android:fontFamily="@font/arial"
+                android:text="TextView"
+                app:layout_constraintBottom_toTopOf="@+id/editTextText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medication_Image_opened" />
+
+            <TextView
+                android:id="@+id/medication_Description_opened"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:ems="10"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scrollbars="vertical"
+                android:text="Description"
+                android:textAlignment="textStart"
+                android:textSize="19sp"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+            <TextView
+                android:id="@+id/medication_Restrictions_opened"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="164dp"
+                android:layout_marginEnd="24dp"
+                android:ems="10"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:scrollbars="vertical"
+                android:text="Description"
+                android:textAlignment="textStart"
+                android:textSize="19sp"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                style="@style/Theme.PharmaFriendApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginEnd="153dp"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
+                android:ems="10"
+                android:fontFamily="@font/arial"
+                android:inputType="text"
+                android:text="Description"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Description_opened"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medication_Image_opened" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="81dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/arial"
+                android:text="Qnt:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/Dosage"
+                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/medication_Price_opened"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="152dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/arial"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Price"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+            <Spinner
+                android:id="@+id/dossage_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:dropDownWidth="wrap_content"
+                android:dropDownSelector="@android:drawable/arrow_down_float"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Dosage"
+                app:layout_constraintTop_toBottomOf="@+id/label_qty" />
+
+
+            <TextView
+                android:id="@+id/label_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.447" />
+
+            <ImageView
+                android:id="@+id/label_minus"
+                android:layout_width="34dp"
+                android:layout_height="42dp"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
+                app:layout_constraintEnd_toStartOf="@+id/label_qty"
+                app:layout_constraintHorizontal_bias="0.847"
+                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/minus_icon" />
+
+            <ImageView
+                android:id="@+id/label_plus"
+                android:layout_width="34dp"
+                android:layout_height="42dp"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.119"
+                app:layout_constraintStart_toEndOf="@+id/label_qty"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/plus_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/topNavigationView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingRight="350dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/top_navigation_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

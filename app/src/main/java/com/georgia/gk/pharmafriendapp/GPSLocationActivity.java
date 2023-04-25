@@ -109,7 +109,7 @@ public class GPSLocationActivity extends AppCompatActivity {
                     @Override
                     public void onMapReady(@NonNull GoogleMap googleMap) {
                         if(location != null){
-                            LatLng latLng = new LatLng(location.getLatitude(), location.getLatitude());
+                            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                             MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("This is your current location");
                             googleMap.addMarker(markerOptions);
                             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));

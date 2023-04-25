@@ -30,13 +30,23 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBIyEQWynYX1f9n87FywaT2eI-muQcIRXU" />
 
+
         <activity
-            android:name=".ColdAndFluCategoryActivity"
+            android:name=".MedicationCategoryListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".MedicationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".VerificationCodeActivity"
             android:exported="false">
