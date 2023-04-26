@@ -19,6 +19,20 @@
         android:theme="@style/Theme.PharmaFriendApp"
         tools:targetApi="31">
         <activity
+            android:name=".PaymentActivityNumber"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ClickAndCollectActivityNumber"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".GPSLocationActivity"
             android:exported="false">
             <meta-data
@@ -30,7 +44,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBIyEQWynYX1f9n87FywaT2eI-muQcIRXU" />
 
-
         <activity
             android:name=".MedicationCategoryListActivity"
             android:exported="false">
@@ -38,7 +51,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MedicationActivity"
             android:exported="false">
@@ -46,7 +58,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".VerificationCodeActivity"
             android:exported="false">

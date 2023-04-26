@@ -15,9 +15,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp">
+
 
             <ImageView
                 android:id="@+id/medication_Image_opened"
@@ -37,7 +43,7 @@
                 android:id="@+id/Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/arial"
                 android:text="Price:"
@@ -50,7 +56,7 @@
                 android:id="@+id/Dosage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="117dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/arial"
@@ -59,7 +65,8 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/medication_Price_opened"
                 app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/medication_Name_opened"
@@ -72,13 +79,15 @@
                 android:text="TextView"
                 app:layout_constraintBottom_toTopOf="@+id/editTextText"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/medication_Image_opened" />
+                app:layout_constraintTop_toBottomOf="@+id/medication_Image_opened"
+                app:layout_constraintVertical_bias="0.842" />
 
             <TextView
                 android:id="@+id/medication_Description_opened"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_width="301dp"
+                android:layout_height="181dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:ems="10"
@@ -92,30 +101,29 @@
                 android:textSize="19sp"
                 android:typeface="normal"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.435"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
             <TextView
                 android:id="@+id/medication_Restrictions_opened"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="164dp"
-                android:layout_marginEnd="24dp"
+                android:layout_width="317dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="40dp"
                 android:ems="10"
                 android:fontFamily="@font/arial"
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scrollbars="vertical"
-                android:text="Description"
+                android:text="Restrictions"
                 android:textAlignment="textStart"
                 android:textSize="19sp"
                 android:typeface="normal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.53"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+                app:layout_constraintTop_toBottomOf="@+id/medication_Description_opened" />
 
             <EditText
                 android:id="@+id/editTextText"
@@ -135,6 +143,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/medication_Description_opened"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/medication_Image_opened" />
 
@@ -142,7 +151,7 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="81dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/arial"
@@ -151,7 +160,8 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/Dosage"
                 app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/medication_Price_opened"
@@ -170,64 +180,228 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-
-
-
             <Spinner
                 android:id="@+id/dossage_spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
                 android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:dropDownWidth="wrap_content"
                 android:dropDownSelector="@android:drawable/arrow_down_float"
                 android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/medication_Price_opened"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Dosage"
-                app:layout_constraintTop_toBottomOf="@+id/label_qty" />
-
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/Dosage" />
 
             <TextView
                 android:id="@+id/label_qty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="21dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="16dp"
                 android:text="1"
-                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.485"
-                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/dossage_spinner"
+                app:layout_constraintEnd_toStartOf="@+id/label_plus"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.447" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/label_minus"
                 android:layout_width="34dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
+                app:layout_constraintBottom_toTopOf="@+id/dossage_spinner"
                 app:layout_constraintEnd_toStartOf="@+id/label_qty"
-                app:layout_constraintHorizontal_bias="0.847"
-                app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toEndOf="@+id/textView29"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.43"
+                app:layout_constraintVertical_bias="0.928"
                 app:srcCompat="@drawable/minus_icon" />
 
             <ImageView
                 android:id="@+id/label_plus"
                 android:layout_width="34dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toTopOf="@+id/medication_Name_opened"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Price_opened"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.119"
-                app:layout_constraintStart_toEndOf="@+id/label_qty"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.43"
+                app:layout_constraintVertical_bias="0.58"
                 app:srcCompat="@drawable/plus_icon" />
 
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restrictions"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/medication_Restrictions_opened"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medication_Description_opened"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="732dp"
+                android:text="Please Select Day:"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/dateButton"
+                style="?android:spinnerStyle"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240dp"
+                android:text="Jan 01 2023"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/medication_Restrictions_opened"
+                android:onClick="openDate"/>
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="172dp"
+                android:text="Choose Your Preferred Method"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medication_Restrictions_opened" />
+
+            <CheckBox
+                android:id="@+id/check_click_and_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="152dp"
+                android:text="Click_and_Collect"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.059"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView43">
+
+            </CheckBox>
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:text="You can pay and collect the medication in the store"
+                android:textColor="#8ADAF7"
+                android:textSize="19sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.135"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView43"
+                tools:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="248dp"
+                android:text="Online Payment"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.065"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateButton">
+
+            </CheckBox>
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="148dp"
+                android:text="You can pay online and then you can visit the store to picke the medication"
+                android:textColor="#8ADAF7"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.425"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView46" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/orderButton"
+                android:layout_width="238dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="236dp"
+                android:background="@drawable/blue_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.387"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView46">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="Check all the details!"
+                android:textColor="#DC0E0E"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.463"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="100dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView49"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkPayment"
+                app:srcCompat="@drawable/warning_icon" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
     </FrameLayout>
 
