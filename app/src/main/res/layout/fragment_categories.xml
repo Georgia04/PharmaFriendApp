@@ -36,7 +36,7 @@
             app:layout_constraintVertical_bias="0.06" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/coldAndFluButton"
+            android:id="@+id/category_button_01"
             android:layout_width="331dp"
             android:layout_height="48dp"
             android:layout_marginTop="80dp"
@@ -61,7 +61,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/eyeCareButton"
+            android:id="@+id/category_button_03"
             android:layout_width="338dp"
             android:layout_height="47dp"
             android:layout_marginTop="24dp"
@@ -69,7 +69,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coldAndFluButton">
+            app:layout_constraintTop_toBottomOf="@+id/category_button_01">
 
             <TextView
                 android:id="@+id/textView22"
@@ -86,7 +86,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/earCareButton"
+            android:id="@+id/category_button_02"
             android:layout_width="338dp"
             android:layout_height="47dp"
             android:layout_marginTop="24dp"
@@ -94,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eyeCareButton">
+            app:layout_constraintTop_toBottomOf="@+id/category_button_03">
 
             <TextView
                 android:id="@+id/textView23"
@@ -111,7 +111,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mouthUlcersButton"
+            android:id="@+id/category_button_05"
             android:layout_width="338dp"
             android:layout_height="47dp"
             android:layout_marginTop="24dp"
@@ -119,7 +119,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/earCareButton">
+            app:layout_constraintTop_toBottomOf="@+id/category_button_02">
 
             <TextView
                 android:id="@+id/textView24"
@@ -136,7 +136,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/indigestionAndHeartburnButton"
+            android:id="@+id/category_button_04"
             android:layout_width="338dp"
             android:layout_height="47dp"
             android:layout_marginTop="24dp"
@@ -144,7 +144,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.383"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mouthUlcersButton">
+            app:layout_constraintTop_toBottomOf="@+id/category_button_05">
 
             <TextView
                 android:id="@+id/textView25"

@@ -43,8 +43,8 @@
                 android:id="@+id/Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/arial"
                 android:text="Price:"
                 android:textColor="@color/black"
@@ -56,7 +56,7 @@
                 android:id="@+id/Dosage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="117dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/arial"
@@ -66,7 +66,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/medication_Price_opened"
                 app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.769" />
 
             <TextView
                 android:id="@+id/medication_Name_opened"
@@ -151,7 +151,7 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="81dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/arial"
@@ -161,31 +161,28 @@
                 app:layout_constraintBottom_toTopOf="@+id/Dosage"
                 app:layout_constraintStart_toEndOf="@+id/medication_Image_opened"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.6" />
+
 
             <TextView
                 android:id="@+id/medication_Price_opened"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="39dp"
-                android:layout_marginTop="152dp"
-                android:layout_marginEnd="50dp"
+                android:layout_marginTop="156dp"
                 android:fontFamily="@font/arial"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/Price"
+                app:layout_constraintHorizontal_bias="0.848"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <Spinner
                 android:id="@+id/dossage_spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="69dp"
+                android:layout_height="33dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="32dp"
                 android:layout_marginBottom="32dp"
                 android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:dropDownWidth="wrap_content"
@@ -193,43 +190,39 @@
                 android:spinnerMode="dropdown"
                 app:layout_constraintBottom_toBottomOf="@+id/medication_Price_opened"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/Dosage" />
 
             <TextView
                 android:id="@+id/label_qty"
                 android:layout_width="21dp"
                 android:layout_height="26dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="76dp"
                 android:text="1"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/dossage_spinner"
-                app:layout_constraintEnd_toStartOf="@+id/label_plus"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.861"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/label_minus"
                 android:layout_width="34dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toTopOf="@+id/dossage_spinner"
+                android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toStartOf="@+id/label_qty"
-                app:layout_constraintHorizontal_bias="0.531"
                 app:layout_constraintStart_toEndOf="@+id/textView29"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.928"
                 app:srcCompat="@drawable/minus_icon" />
 
             <ImageView
                 android:id="@+id/label_plus"
                 android:layout_width="34dp"
                 android:layout_height="42dp"
-                android:layout_marginEnd="4dp"
-                app:layout_constraintBottom_toTopOf="@+id/medication_Price_opened"
+                android:layout_marginTop="68dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.58"
                 app:srcCompat="@drawable/plus_icon" />
 
             <TextView
@@ -251,13 +244,13 @@
                 android:id="@+id/textView43"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="732dp"
+                android:layout_marginTop="728dp"
                 android:text="Please Select Day:"
                 android:textColor="#000000"
                 android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintHorizontal_bias="0.063"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -266,15 +259,15 @@
                 style="?android:spinnerStyle"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="244dp"
+                android:onClick="openDate"
                 android:text="Jan 01 2023"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintHorizontal_bias="0.018"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/medication_Restrictions_opened"
-                android:onClick="openDate"/>
+                app:layout_constraintTop_toTopOf="@+id/medication_Restrictions_opened" />
 
             <TextView
                 android:id="@+id/textView44"
@@ -282,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="172dp"
                 android:text="Choose Your Preferred Method"
-                android:textColor="#000000"
+                android:textColor="#8ADAF7"
                 android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -295,7 +288,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="152dp"
-                android:text="Click_and_Collect"
+                android:text="Click-and-Collect"
                 android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -313,11 +306,11 @@
                 android:text="You can pay and collect the medication in the store"
                 android:textColor="#8ADAF7"
                 android:textSize="19sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.135"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView43"
-                tools:textStyle="bold" />
+                app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
             <CheckBox
                 android:id="@+id/checkPayment"
@@ -353,12 +346,12 @@
                 android:id="@+id/orderButton"
                 android:layout_width="238dp"
                 android:layout_height="43dp"
-                android:layout_marginTop="236dp"
+                android:layout_marginTop="112dp"
                 android:background="@drawable/blue_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.387"
+                app:layout_constraintHorizontal_bias="0.439"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView46">
+                app:layout_constraintTop_toBottomOf="@+id/textView48">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -398,6 +391,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkPayment"
                 app:srcCompat="@drawable/warning_icon" />
+
+            <TextView
+                android:id="@+id/inStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In-Stock-Available"
+                android:textColor="#43E81D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/editTextText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medication_Price_opened"
+                app:layout_constraintVertical_bias="0.317" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
